@@ -68,4 +68,20 @@ var o = { 'name' : 'Thluffy',
 	  }
 	};
 
+var b = document.getElementById("b");
+
+b.addEventListener("click", function() {
+    addItem("more elements!");
+}
+);
+
+var l = document.getElementsByTagName("li");
+
+for (var x = 0; x < l.length; x++) {
+    l[x].addEventListener("click", function() {
+	removeItem(x);
+}
+);
+};
+
 
