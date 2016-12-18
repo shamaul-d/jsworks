@@ -112,6 +112,29 @@ b.addEventListener("click", function() {
 }
 );
 
+var fb = document.getElementById("fb");
+
+var ctr = 1;
+
+var fbl = document.getElementById("fiblist");
+
+fb.addEventListener("click", function() {
+    var fib = document.createElement("li");
+    fib.innerHTML = fibgen(ctr);
+    ctr++;
+    fbl.appendChild(fib);
+    }
+                    );
+   
+var fibgen = function(n) {
+    if (n == 1 || n == 2) {
+        return 1;
+        }
+    else {
+        return fibgen(n-1) + fibgen(n-2);
+        }
+    };
+
 
 
 
