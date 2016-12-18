@@ -44,6 +44,14 @@ var addItem = function(text) {
         removeItem(this);
         }
                              );
+    newitem.addEventListener("mouseover", function() {
+        h.innerHTML = this.innerHTML;
+        }
+                             );
+    newitem.addEventListener("mouseout", function() {
+        h.innerHTML = orgh;
+        }
+                             );
 };
 
 
@@ -73,13 +81,25 @@ var o = { 'name' : 'Thluffy',
 
 var l = document.getElementsByTagName("li");
 
+var h = document.getElementById("h");
+
+var orgh = h.innerHTML;
+
 var init = function() {
     for (var i = 0; i < l.length; i++) {
         //console.log(l[i]);
-        l[i].addEventListener ("click", function() {
+        l[i].addEventListener("click", function() {
             removeItem(this);
             }
                                );
+        l[i].addEventListener("mouseover", function() {
+            h.innerHTML = this.innerHTML;
+            }
+                              );
+        l[i].addEventListener("mouseout", function() {
+            h.innerHTML = orgh;
+            }
+                              );
         };
     };
 
