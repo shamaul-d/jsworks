@@ -40,13 +40,16 @@ var addItem = function(text) {
     var newitem = document.createElement("li");
     newitem.innerHTML = text;
     list.appendChild(newitem);
+    newitem.addEventListener("click", function() {
+        removeItem(this);
+        }
+                             );
 };
 
 
 //remove specified item from list
 var removeItem = function(n) {
-    var listitems = document.getElementsByTagName('li');
-    listitems[n].remove();
+    n.remove();
 };
 
 
@@ -68,6 +71,20 @@ var o = { 'name' : 'Thluffy',
 	  }
 	};
 
+var l = document.getElementsByTagName("li");
+
+var init = function() {
+    for (var i = 0; i < l.length; i++) {
+        //console.log(l[i]);
+        l[i].addEventListener ("click", function() {
+            removeItem(this);
+            }
+                               );
+        };
+    };
+
+init()
+
 var b = document.getElementById("b");
 
 b.addEventListener("click", function() {
@@ -75,13 +92,7 @@ b.addEventListener("click", function() {
 }
 );
 
-var l = document.getElementsByTagName("li");
 
-for (var x = 0; x < l.length; x++) {
-    l[x].addEventListener("click", function() {
-	removeItem(x);
-}
-);
-};
+
 
 
